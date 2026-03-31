@@ -1,6 +1,6 @@
 import Foundation
 
-struct LoginResponse: Codable {
+struct LoginResponse: Codable, Sendable {
     let success: Bool
     let user: User
 }

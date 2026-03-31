@@ -1,6 +1,6 @@
 import Foundation
 
-struct Driver: Identifiable, Codable {
+struct Driver: Identifiable, Codable, Sendable {
     let id: String
     let name: String
     let rating: Double
@@ -10,7 +10,7 @@ struct Driver: Identifiable, Codable {
     let vehicleType: VehicleType
 }
 
-enum VehicleType: String, Codable {
+enum VehicleType: String, Codable, Sendable {
     case bike = "Bike"
     case auto = "Auto"
     case cab = "Cab"

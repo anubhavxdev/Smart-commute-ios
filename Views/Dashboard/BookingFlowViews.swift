@@ -8,7 +8,6 @@ struct VehicleSelectionSheet: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
-            // Header
             HStack {
                 Button(action: {
                     viewModel.cancelBooking()
@@ -26,7 +25,6 @@ struct VehicleSelectionSheet: View {
             }
             .padding(.bottom, 5)
             
-            // Fares list
             VStack(spacing: 12) {
                 FareRow(vehicle: .bike, icon: "bicycle", time: "2 min", price: viewModel.fareEstimates[.bike] ?? 40, isSelected: selectedVehicle == .bike)
                     .onTapGesture { selectedVehicle = .bike }
@@ -38,7 +36,6 @@ struct VehicleSelectionSheet: View {
                     .onTapGesture { selectedVehicle = .cab }
             }
             
-            // Book Button
             Button(action: {
                 viewModel.bookRide(vehicle: selectedVehicle)
             }) {
@@ -128,7 +125,6 @@ struct FindingCaptainSheet: View {
                 isPulsing = true
             }
             
-            // Cancel Search
             Button(action: {
                 viewModel.cancelBooking()
             }) {
@@ -151,6 +147,7 @@ struct FindingCaptainSheet: View {
 
 struct ActiveRideSheet: View {
     @ObservedObject var viewModel: DashboardViewModel
+    var onEndRide: () -> Void
     
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
@@ -207,7 +204,6 @@ struct ActiveRideSheet: View {
                     }
                 }
                 
-                // Communication Actions
                 HStack(spacing: 15) {
                     Button(action: {}) {
                         HStack {
@@ -235,7 +231,7 @@ struct ActiveRideSheet: View {
                 }
                 
                 Button(action: {
-                    viewModel.cancelBooking()
+                    onEndRide()
                 }) {
                     Text("End Ride")
                         .font(.subheadline)

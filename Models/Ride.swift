@@ -1,6 +1,6 @@
 import Foundation
 
-struct Ride: Identifiable, Codable {
+struct Ride: Identifiable, Codable, Sendable {
     let id: String
     let destination: String
     let pickupLocation: String
@@ -9,7 +9,7 @@ struct Ride: Identifiable, Codable {
     let status: RideStatus
 }
 
-enum RideStatus: String, Codable {
+enum RideStatus: String, Codable, Sendable {
     case upcoming = "Upcoming"
     case completed = "Completed"
     case cancelled = "Cancelled"
