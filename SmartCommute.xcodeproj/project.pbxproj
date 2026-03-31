@@ -7,16 +7,13 @@
 	objects = {
 
 /* Begin PBXFileReference section */
+		1768D0592F7C54C2009FF38C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		1768D05A2F7C54E6009FF38C /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		1768D05B2F7C5503009FF38C /* ActionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCard.swift; sourceTree = "<group>"; };
+		1768D05D2F7C5548009FF38C /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		179CE4492F7C56960086CA08 /* SmartCommuteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartCommuteApp.swift; sourceTree = "<group>"; };
 		17B282EA2F7C1B0800FCA583 /* SmartCommute.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartCommute.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		17B282EC2F7C1B0800FCA583 /* SmartCommute */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = SmartCommute;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		17B282E72F7C1B0800FCA583 /* Frameworks */ = {
@@ -29,10 +26,86 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1768D04F2F7C5304009FF38C /* App */ = {
+			isa = PBXGroup;
+			children = (
+				179CE4492F7C56960086CA08 /* SmartCommuteApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		1768D0502F7C5337009FF38C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1768D0582F7C53C3009FF38C /* Components */,
+				1768D0572F7C53B6009FF38C /* Dashboard */,
+				1768D0562F7C53A8009FF38C /* Auth */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1768D0522F7C5363009FF38C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				1768D05D2F7C5548009FF38C /* AuthViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		1768D0532F7C5378009FF38C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		1768D0542F7C5382009FF38C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1768D0552F7C538B009FF38C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1768D0562F7C53A8009FF38C /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				1768D0592F7C54C2009FF38C /* LoginView.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		1768D0572F7C53B6009FF38C /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				1768D05A2F7C54E6009FF38C /* DashboardView.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		1768D0582F7C53C3009FF38C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				1768D05B2F7C5503009FF38C /* ActionCard.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		17B282E12F7C1B0800FCA583 = {
 			isa = PBXGroup;
 			children = (
-				17B282EC2F7C1B0800FCA583 /* SmartCommute */,
+				1768D0552F7C538B009FF38C /* Resources */,
+				1768D0542F7C5382009FF38C /* Models */,
+				1768D0532F7C5378009FF38C /* Services */,
+				1768D0522F7C5363009FF38C /* ViewModels */,
+				1768D0502F7C5337009FF38C /* Views */,
+				1768D04F2F7C5304009FF38C /* App */,
 				17B282EB2F7C1B0800FCA583 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -59,9 +132,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				17B282EC2F7C1B0800FCA583 /* SmartCommute */,
 			);
 			name = SmartCommute;
 			packageProductDependencies = (
