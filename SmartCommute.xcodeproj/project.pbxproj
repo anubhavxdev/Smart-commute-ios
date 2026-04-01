@@ -33,6 +33,28 @@
 		BB00000100000018 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC00000100000009 /* SettingsView.swift */; };
 		BB00000100000019 /* RouteMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0000010000000A /* RouteMapView.swift */; };
 		BB0000010000001A /* LocationSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0000010000000B /* LocationSearchView.swift */; };
+		BB0000010000001B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00000200000001 /* ProfileView.swift */; };
+		BB0000010000001C /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00000200000002 /* OnboardingView.swift */; };
+		BB0000010000001D /* OTPVerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00000200000003 /* OTPVerificationView.swift */; };
+		BB0000010000001E /* LiveTrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00000200000004 /* LiveTrackingView.swift */; };
+		BB0000010000001F /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00000200000005 /* NotificationsView.swift */; };
+		BB00000100000020 /* HelpSupportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00000200000006 /* HelpSupportView.swift */; };
+		BB00000100000021 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00000200000007 /* AboutView.swift */; };
+		BB00000100000022 /* SavedAddressesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00000200000008 /* SavedAddressesView.swift */; };
+		BB00000100000023 /* RideReceiptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00000200000009 /* RideReceiptView.swift */; };
+		BB00000100000024 /* ScheduleRideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0000020000000A /* ScheduleRideView.swift */; };
+		BB00000100000025 /* RideSharingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0000020000000B /* RideSharingView.swift */; };
+		BB00000100000026 /* EmergencySOSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0000020000000C /* EmergencySOSView.swift */; };
+		BB00000100000027 /* PaymentMethodsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0000020000000D /* PaymentMethodsView.swift */; };
+		BB00000100000028 /* FareEstimatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0000020000000E /* FareEstimatorView.swift */; };
+		BB00000100000029 /* CorporateDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0000020000000F /* CorporateDashboardView.swift */; };
+		BB0000010000002A /* CommuteInsightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00000200000010 /* CommuteInsightsView.swift */; };
+		BB0000010000002B /* ReferralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00000200000011 /* ReferralView.swift */; };
+		BB0000010000002C /* FavoriteDriversView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00000200000012 /* FavoriteDriversView.swift */; };
+		BB0000010000002D /* MultiStopRideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00000200000013 /* MultiStopRideView.swift */; };
+		BB0000010000002E /* AccessibilitySettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00000200000014 /* AccessibilitySettingsView.swift */; };
+		BB0000010000002F /* LanguageSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00000200000015 /* LanguageSelectionView.swift */; };
+		BB00000100000030 /* ThemeSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00000200000016 /* ThemeSettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +85,28 @@
 		CC00000100000009 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		CC0000010000000A /* RouteMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteMapView.swift; sourceTree = "<group>"; };
 		CC0000010000000B /* LocationSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchView.swift; sourceTree = "<group>"; };
+		DD00000200000001 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		DD00000200000002 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		DD00000200000003 /* OTPVerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPVerificationView.swift; sourceTree = "<group>"; };
+		DD00000200000004 /* LiveTrackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTrackingView.swift; sourceTree = "<group>"; };
+		DD00000200000005 /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
+		DD00000200000006 /* HelpSupportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpSupportView.swift; sourceTree = "<group>"; };
+		DD00000200000007 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		DD00000200000008 /* SavedAddressesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedAddressesView.swift; sourceTree = "<group>"; };
+		DD00000200000009 /* RideReceiptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideReceiptView.swift; sourceTree = "<group>"; };
+		DD0000020000000A /* ScheduleRideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleRideView.swift; sourceTree = "<group>"; };
+		DD0000020000000B /* RideSharingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideSharingView.swift; sourceTree = "<group>"; };
+		DD0000020000000C /* EmergencySOSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencySOSView.swift; sourceTree = "<group>"; };
+		DD0000020000000D /* PaymentMethodsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodsView.swift; sourceTree = "<group>"; };
+		DD0000020000000E /* FareEstimatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FareEstimatorView.swift; sourceTree = "<group>"; };
+		DD0000020000000F /* CorporateDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorporateDashboardView.swift; sourceTree = "<group>"; };
+		DD00000200000010 /* CommuteInsightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommuteInsightsView.swift; sourceTree = "<group>"; };
+		DD00000200000011 /* ReferralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferralView.swift; sourceTree = "<group>"; };
+		DD00000200000012 /* FavoriteDriversView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDriversView.swift; sourceTree = "<group>"; };
+		DD00000200000013 /* MultiStopRideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiStopRideView.swift; sourceTree = "<group>"; };
+		DD00000200000014 /* AccessibilitySettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilitySettingsView.swift; sourceTree = "<group>"; };
+		DD00000200000015 /* LanguageSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelectionView.swift; sourceTree = "<group>"; };
+		DD00000200000016 /* ThemeSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +193,7 @@
 				1768D0572F7C53B6009FF38C /* Dashboard */,
 				1768D0562F7C53A8009FF38C /* Auth */,
 				DD00000100000001 /* Splash */,
+				EE00000100000001 /* Onboarding */,
 				DD00000100000002 /* Menu */,
 				DD00000100000003 /* History */,
 				DD00000100000004 /* Rating */,
@@ -156,6 +201,26 @@
 				DD00000100000006 /* Offers */,
 				DD00000100000007 /* Settings */,
 				DD00000100000008 /* Map */,
+				EE00000100000002 /* Profile */,
+				EE00000100000003 /* Tracking */,
+				EE00000100000004 /* Notifications */,
+				EE00000100000005 /* Support */,
+				EE00000100000006 /* About */,
+				EE00000100000007 /* SavedAddresses */,
+				EE00000100000008 /* Receipt */,
+				EE00000100000009 /* Schedule */,
+				EE0000010000000A /* Carpool */,
+				EE0000010000000B /* Emergency */,
+				EE0000010000000C /* Payments */,
+				EE0000010000000D /* FareEstimator */,
+				EE0000010000000E /* Corporate */,
+				EE0000010000000F /* Insights */,
+				EE00000100000010 /* Referral */,
+				EE00000100000011 /* FavoriteDrivers */,
+				EE00000100000012 /* MultiStop */,
+				EE00000100000013 /* Accessibility */,
+				EE00000100000014 /* Language */,
+				EE00000100000015 /* Theme */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -210,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				1768D0592F7C54C2009FF38C /* LoginView.swift */,
+				DD00000200000003 /* OTPVerificationView.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -251,6 +317,174 @@
 				17B282EA2F7C1B0800FCA583 /* SmartCommute.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		EE00000100000001 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				DD00000200000002 /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		EE00000100000002 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				DD00000200000001 /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		EE00000100000003 /* Tracking */ = {
+			isa = PBXGroup;
+			children = (
+				DD00000200000004 /* LiveTrackingView.swift */,
+			);
+			path = Tracking;
+			sourceTree = "<group>";
+		};
+		EE00000100000004 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				DD00000200000005 /* NotificationsView.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		EE00000100000005 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				DD00000200000006 /* HelpSupportView.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		EE00000100000006 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				DD00000200000007 /* AboutView.swift */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		EE00000100000007 /* SavedAddresses */ = {
+			isa = PBXGroup;
+			children = (
+				DD00000200000008 /* SavedAddressesView.swift */,
+			);
+			path = SavedAddresses;
+			sourceTree = "<group>";
+		};
+		EE00000100000008 /* Receipt */ = {
+			isa = PBXGroup;
+			children = (
+				DD00000200000009 /* RideReceiptView.swift */,
+			);
+			path = Receipt;
+			sourceTree = "<group>";
+		};
+		EE00000100000009 /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				DD0000020000000A /* ScheduleRideView.swift */,
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
+		EE0000010000000A /* Carpool */ = {
+			isa = PBXGroup;
+			children = (
+				DD0000020000000B /* RideSharingView.swift */,
+			);
+			path = Carpool;
+			sourceTree = "<group>";
+		};
+		EE0000010000000B /* Emergency */ = {
+			isa = PBXGroup;
+			children = (
+				DD0000020000000C /* EmergencySOSView.swift */,
+			);
+			path = Emergency;
+			sourceTree = "<group>";
+		};
+		EE0000010000000C /* Payments */ = {
+			isa = PBXGroup;
+			children = (
+				DD0000020000000D /* PaymentMethodsView.swift */,
+			);
+			path = Payments;
+			sourceTree = "<group>";
+		};
+		EE0000010000000D /* FareEstimator */ = {
+			isa = PBXGroup;
+			children = (
+				DD0000020000000E /* FareEstimatorView.swift */,
+			);
+			path = FareEstimator;
+			sourceTree = "<group>";
+		};
+		EE0000010000000E /* Corporate */ = {
+			isa = PBXGroup;
+			children = (
+				DD0000020000000F /* CorporateDashboardView.swift */,
+			);
+			path = Corporate;
+			sourceTree = "<group>";
+		};
+		EE0000010000000F /* Insights */ = {
+			isa = PBXGroup;
+			children = (
+				DD00000200000010 /* CommuteInsightsView.swift */,
+			);
+			path = Insights;
+			sourceTree = "<group>";
+		};
+		EE00000100000010 /* Referral */ = {
+			isa = PBXGroup;
+			children = (
+				DD00000200000011 /* ReferralView.swift */,
+			);
+			path = Referral;
+			sourceTree = "<group>";
+		};
+		EE00000100000011 /* FavoriteDrivers */ = {
+			isa = PBXGroup;
+			children = (
+				DD00000200000012 /* FavoriteDriversView.swift */,
+			);
+			path = FavoriteDrivers;
+			sourceTree = "<group>";
+		};
+		EE00000100000012 /* MultiStop */ = {
+			isa = PBXGroup;
+			children = (
+				DD00000200000013 /* MultiStopRideView.swift */,
+			);
+			path = MultiStop;
+			sourceTree = "<group>";
+		};
+		EE00000100000013 /* Accessibility */ = {
+			isa = PBXGroup;
+			children = (
+				DD00000200000014 /* AccessibilitySettingsView.swift */,
+			);
+			path = Accessibility;
+			sourceTree = "<group>";
+		};
+		EE00000100000014 /* Language */ = {
+			isa = PBXGroup;
+			children = (
+				DD00000200000015 /* LanguageSelectionView.swift */,
+			);
+			path = Language;
+			sourceTree = "<group>";
+		};
+		EE00000100000015 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				DD00000200000016 /* ThemeSettingsView.swift */,
+			);
+			path = Theme;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -347,6 +581,28 @@
 				BB00000100000018 /* SettingsView.swift in Sources */,
 				BB00000100000019 /* RouteMapView.swift in Sources */,
 				BB0000010000001A /* LocationSearchView.swift in Sources */,
+				BB0000010000001B /* ProfileView.swift in Sources */,
+				BB0000010000001C /* OnboardingView.swift in Sources */,
+				BB0000010000001D /* OTPVerificationView.swift in Sources */,
+				BB0000010000001E /* LiveTrackingView.swift in Sources */,
+				BB0000010000001F /* NotificationsView.swift in Sources */,
+				BB00000100000020 /* HelpSupportView.swift in Sources */,
+				BB00000100000021 /* AboutView.swift in Sources */,
+				BB00000100000022 /* SavedAddressesView.swift in Sources */,
+				BB00000100000023 /* RideReceiptView.swift in Sources */,
+				BB00000100000024 /* ScheduleRideView.swift in Sources */,
+				BB00000100000025 /* RideSharingView.swift in Sources */,
+				BB00000100000026 /* EmergencySOSView.swift in Sources */,
+				BB00000100000027 /* PaymentMethodsView.swift in Sources */,
+				BB00000100000028 /* FareEstimatorView.swift in Sources */,
+				BB00000100000029 /* CorporateDashboardView.swift in Sources */,
+				BB0000010000002A /* CommuteInsightsView.swift in Sources */,
+				BB0000010000002B /* ReferralView.swift in Sources */,
+				BB0000010000002C /* FavoriteDriversView.swift in Sources */,
+				BB0000010000002D /* MultiStopRideView.swift in Sources */,
+				BB0000010000002E /* AccessibilitySettingsView.swift in Sources */,
+				BB0000010000002F /* LanguageSelectionView.swift in Sources */,
+				BB00000100000030 /* ThemeSettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

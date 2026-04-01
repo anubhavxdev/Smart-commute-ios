@@ -19,6 +19,7 @@
   <img src="https://img.shields.io/badge/iOS-17+-000000?style=for-the-badge&logo=apple&logoColor=white"/>
   <img src="https://img.shields.io/badge/MapKit-Routing-34A853?style=for-the-badge&logo=googlemaps&logoColor=white"/>
   <img src="https://img.shields.io/badge/Architecture-MVVM-FF6F00?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Screens-35+-FAD035?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/Node.js-Express-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"/>
 </p>
 
@@ -32,7 +33,7 @@
 
 ## 📖 About
 
-**SmartCommute** is a fully functional, multi-screen ride-hailing iOS prototype inspired by [Rapido](https://www.rapido.bike/). Built **entirely in SwiftUI** with a clean MVVM architecture, it delivers a complete end-to-end booking experience — from animated splash screen to live route mapping, dynamic fare calculation, driver assignment, and post-ride rating.
+**SmartCommute** is a fully functional, **35+ screen** ride-hailing iOS application inspired by [Rapido](https://www.rapido.bike/). Built **entirely in SwiftUI** with clean MVVM architecture, it delivers a comprehensive end-to-end commuting experience — from onboarding and authentication to ride booking, live tracking, payments, corporate dashboards, and ride analytics.
 
 > 🎯 Designed as a **production-quality prototype** showcasing modern iOS development with SwiftUI, MapKit, async/await networking, and state-driven UI.
 
@@ -46,21 +47,25 @@ This project leverages the full power of Apple's **SwiftUI** framework:
 |---|---|
 | `@StateObject` / `@Published` | Reactive state management across all ViewModels |
 | `@EnvironmentObject` | Global auth state shared across the entire app |
-| `NavigationStack` / `NavigationDestination` | Programmatic navigation between 10+ screens |
+| `NavigationStack` / `NavigationDestination` | Programmatic navigation between 35+ screens |
 | `.animation()` / `.transition()` | Spring animations, scale transitions, slide-in menus |
 | `Map` / `MKMapView` (UIViewRepresentable) | Full MapKit integration with route polylines & custom pins |
 | `@FocusState` | Keyboard management in location search |
-| `LazyVStack` | Performant scrolling lists with lazy loading |
+| `LazyVStack` / `LazyVGrid` | Performant scrolling lists with lazy loading |
 | `Sheet` / `ZStack` overlays | Modal presentations & overlay-driven booking flow |
 | `.ultraThinMaterial` | Glassmorphism effects on floating UI elements |
 | `Timer` + `withAnimation` | Simulated real-time driver movement on map |
+| `GeometryReader` | Responsive route visualization & animated charts |
+| `TabView(.page)` | Onboarding carousel with custom page indicators |
 
 ---
 
 ## ✨ Features
 
-### 🔐 Authentication
+### 🎬 Onboarding & Authentication
+- **4-page animated onboarding** with gradient backgrounds and page indicators
 - Email/password login with real-time validation
+- **OTP verification** with 6-digit auto-advancing input and countdown timer
 - Loading states & error handling
 - Mock fallback when backend is offline
 
@@ -85,108 +90,169 @@ This project leverages the full power of Apple's **SwiftUI** framework:
 - Route preview sheet with distance, ETA, and fare comparison chips
 - Detailed fare breakdown with GST
 
-### 🏍️ Vehicle Selection
+### 🏍️ Vehicle Selection & Booking
 - Choose between **Bike**, **Auto**, **Cab**, or **Parcel**
-- Each shows estimated fare & ETA based on distance
-- Highlighted selection with yellow accent border
-
-### 🔍 Captain Matching
-- Animated pulsing radar effect simulating real-time driver search
-- 3-second simulated matching algorithm
-- Cancel search option
-
-### 🧑‍✈️ Active Ride & Driver Tracking
-- Assigned captain with **randomized** name, rating, vehicle, plate number
+- Animated pulsing radar for captain matching
+- Assigned captain with randomized name, rating, vehicle, plate number
 - **4-digit OTP** generated for ride verification
-- **Driver icon moves toward you on the map** every 2 seconds
-- Call & Message action buttons
-- End Ride button
 
-### ⭐ Post-Ride Rating
+### 📡 Live Ride Tracking *(NEW)*
+- Real-time animated route visualization with bezier curves
+- **Driver icon moves along the route** with pulsing animation
+- ETA countdown and progress percentage
+- Integrated SOS button, Call, Chat, and Share actions
+
+### 🛣️ Multi-Stop Rides *(NEW)*
+- Add up to 3 intermediate stops with timeline visualization
+- Dynamic stop management (add/remove)
+- Quick-add suggested locations
+- Per-stop fare estimation with wait time display
+
+### 📅 Scheduled Rides *(NEW)*
+- Advance ride scheduling with date/time pickers
+- Recurring weekday toggle for daily commutes
+- Upcoming scheduled rides management
+
+### 🤝 Ride Sharing / Carpool *(NEW)*
+- Colleague matching with route compatibility
+- CO₂ savings tracking and environmental impact
+- Active pool management and creation
+
+### ⭐ Post-Ride Experience
 - Interactive 5-star rating with tap animation
-- Optional text feedback
-- Tip selection (₹10 / ₹20 / ₹50) with toggle
-- Skip option
+- Optional text feedback & tip selection (₹10/₹20/₹50)
+- **Detailed ride receipt** with fare breakdown, PDF download, and sharing
 
-### 📋 Side Menu
-- Slide-in hamburger menu with profile header
-- Navigation to: My Rides, Wallet, Offers, Settings
-- User avatar, rating, phone number display
-- Logout with auth state reset
+### 🔐 Safety & Emergency *(NEW)*
+- **Emergency SOS** with animated panic button
+- Emergency contact management
+- Safety feature toggles (share ride, trusted contacts)
+- Quick-action safety tips
 
-### 🕓 Ride History
-- **9 past rides** with real Bangalore destinations
-- Summary stats bar: Total Rides, Total Spent, Avg Rating
-- **Filter chips**: All / Bike / Auto / Cab
-- Inline star rating display
-- Tap any ride → detailed receipt view
+### 💳 Payments & Wallet *(NEW)*
+- **Multiple payment methods**: UPI, Cards, Wallet, Corporate Billing
+- Default payment selection
+- Animated wallet balance card
+- Transaction history with color-coded credits/debits
 
-### 🧾 Ride Detail / Receipt
-- Pickup → Drop route with dot trail
-- Trip stats: Distance, Duration, Fare
-- Complete fare breakdown with platform fee & GST
-- Driver info with vehicle type badge & plate number
-- Payment method display
-- Invoice & Report buttons
+### 🧮 Fare Estimator *(NEW)*
+- Route-based fare calculation across vehicle types
+- Popular route suggestions
+- Fare range display for Bike, Auto, and Cab
 
-### 💰 Wallet
-- Animated balance card on yellow gradient
-- Quick add money buttons (+₹100, +₹200, +₹500) — **actually updates balance**
-- 6 transaction entries (rides, cashback, referral bonus)
-- Color-coded credit (green) / debit (red) with icons
+### 🏢 Corporate Features *(NEW)*
+- **Corporate Dashboard** with budget ring chart
+- Company policy rules and ride limits
+- Team activity leaderboard
+- Expense report generation
 
-### 🎁 Offers & Coupons
-- 4 vibrant gradient coupon cards (purple, blue, orange, green)
-- Promo codes with "Apply" → "Copied!" feedback
-- Promotional text with discount percentages
+### 📊 Commute Insights *(NEW)*
+- Weekly spending analytics with bar charts
+- Vehicle usage breakdown (Bike / Auto / Cab percentage)
+- Top routes analysis
+- Environmental impact stats (CO₂ saved, trees equivalent)
 
-### ⚙️ Settings
-- Profile section with Edit button
-- Toggle switches: Notifications, Location Services
-- Saved Places: Home & Office with addresses
-- Add New Place option
-- Privacy Policy, Terms of Service, Help links
-- Logout button & app version footer
+### 🎁 Referral Program *(NEW)*
+- Invite-and-earn system with shareable referral code
+- How-it-works step guide
+- Referral tracking with status indicators
+- Earnings dashboard
 
-### 🎬 Splash Screen
-- Animated bicycle icon with spring bounce effect
-- SmartCommute branding with tagline
-- 2-second auto-transition to main app
+### ❤️ Favorite Drivers *(NEW)*
+- Driver management with heart toggle
+- Vehicle info and rating display
+- Preference toggles for priority assignment
+
+### 📋 Side Menu & Navigation
+- **Organized side menu** with section labels (Commute Tools, Corporate & Insights, More)
+- 20+ navigation destinations
+- Profile header with avatar and rating
+- Quick access to all features
+
+### 🔔 Notifications *(NEW)*
+- Categorized inbox (Rides, Promos, System)
+- Read/unread badges with mark-all-read
+- Filter by notification type
+
+### ❓ Help & Support *(NEW)*
+- Searchable FAQ
+- Quick action cards (chat, call, email, ticket)
+- Recent ride issue reporting
+
+### 📍 Saved Addresses *(NEW)*
+- Address management with custom icon picker
+- Quick-access pills for Home, Office, Gym
+- Add/edit/delete addresses
+
+### 🎨 Customization *(NEW)*
+- **Theme settings** with System/Light/Dark mode
+- Accent color picker with live preview
+- **Language selection** with 11 Indian languages
+- Translation completion indicators
+- **Accessibility settings** with font slider, high contrast, wheelchair access, quick presets
+
+### ℹ️ About & Legal *(NEW)*
+- Company mission and stats
+- Terms of Service & Privacy Policy (embedded sheets)
+- Social media links
+- App version info
+
+### 👤 Profile *(NEW)*
+- Editable profile with avatar
+- Personal info management
+- Emergency contact setup
+- Ride preferences (vehicle, music, AC)
 
 ---
 
 ## 📱 Complete User Flow
 
 ```
-┌──────────┐    ┌──────────┐    ┌───────────────┐    ┌──────────────┐
-│  Splash   │──▶│  Login    │──▶│   Dashboard    │──▶│ Location     │
-│  Screen   │   │  Screen   │   │   (Map View)   │   │ Search       │
-└──────────┘    └──────────┘    └───────────────┘    └──────┬───────┘
-                                       │                     │
-                                  ┌────┴────┐               ▼
-                                  │ Side    │    ┌──────────────────┐
-                                  │ Menu    │    │  Route Preview   │
-                                  └────┬────┘    │  (Map + Fares)   │
-                               ┌──────┤          └────────┬─────────┘
-                               │      │                   │
-                          ┌────▼──┐ ┌─▼────┐     ┌───────▼────────┐
-                          │ Rides │ │Wallet│     │Vehicle Select  │
-                          │History│ │      │     │ Bike/Auto/Cab  │
-                          └───────┘ └──────┘     └───────┬────────┘
-                                                         │
-                          ┌────────┐            ┌────────▼────────┐
-                          │Settings│            │ Finding Captain  │
-                          └────────┘            │ (Pulsing Radar)  │
-                                                └────────┬────────┘
-                          ┌────────┐            ┌────────▼────────┐
-                          │ Offers │            │  Ride Confirmed  │
-                          └────────┘            │  (Driver + OTP)  │
-                                                └────────┬────────┘
-                                                         │
-                                                ┌────────▼────────┐
-                                                │  Rating Screen   │
-                                                │  ⭐⭐⭐⭐⭐ + Tip │
-                                                └─────────────────┘
+┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐    ┌───────────────┐
+│ Onboarding│──▶│  Login    │──▶│   OTP    │──▶│  Splash   │──▶│   Dashboard    │
+│ (4 pages) │   │  Screen   │   │  Verify  │   │  Screen   │   │   (Map View)   │
+└──────────┘    └──────────┘    └──────────┘    └──────────┘    └───────┬───────┘
+                                                                        │
+                    ┌───────────────────────────────────────────────────┤
+                    │                                                   │
+               ┌────▼────┐                                    ┌────────▼────────┐
+               │ Side    │                                    │ Location Search  │
+               │ Menu    │                                    └────────┬────────┘
+               └────┬────┘                                             │
+      ┌─────────────┼──────────────┐                         ┌────────▼────────┐
+      │             │              │                         │  Route Preview   │
+┌─────▼─────┐ ┌────▼────┐  ┌─────▼─────┐                   └────────┬────────┘
+│  Profile  │ │  Rides  │  │  Wallet   │                            │
+│  Editor   │ │ History │  │ & Payments│                   ┌────────▼────────┐
+└───────────┘ └────┬────┘  └───────────┘                   │ Vehicle Select  │
+                   │                                        └────────┬────────┘
+              ┌────▼────┐                                            │
+              │  Ride   │                                   ┌────────▼────────┐
+              │ Receipt │                                   │ Captain Matching │
+              └─────────┘                                   └────────┬────────┘
+                                                                     │
+┌───────────────────┐  ┌──────────────┐                    ┌────────▼────────┐
+│ Commute Tools     │  │ Corporate    │                    │  Live Tracking   │
+├───────────────────┤  ├──────────────┤                    │  (Real-time)     │
+│ Schedule Ride     │  │ Dashboard    │                    └────────┬────────┘
+│ Multi-Stop        │  │ Insights     │                             │
+│ Ride Sharing      │  │ Referrals    │                    ┌────────▼────────┐
+│ Fare Estimator    │  └──────────────┘                    │  Rating + Tip    │
+│ Saved Addresses   │                                      └─────────────────┘
+│ Favorite Drivers  │
+└───────────────────┘
+
+┌───────────────────┐
+│ Settings & More   │
+├───────────────────┤
+│ Theme / Dark Mode │
+│ Language (11)     │
+│ Accessibility     │
+│ Notifications     │
+│ Emergency SOS     │
+│ Help & Support    │
+│ About / Legal     │
+└───────────────────┘
 ```
 
 ---
@@ -200,7 +266,7 @@ SmartCommute/
 │
 ├── 📁 App/
 │   ├── SmartCommuteApp.swift              # @main entry point
-│   └── ContentRouterView.swift            # Auth state router
+│   └── ContentRouterView.swift            # Auth + Onboarding router
 │
 ├── 📁 Models/
 │   ├── User.swift                         # User model (Sendable)
@@ -213,29 +279,72 @@ SmartCommute/
 │   └── DashboardViewModel.swift           # BookingState machine, fares, routing
 │
 ├── 📁 Views/
+│   ├── 📁 Onboarding/
+│   │   └── OnboardingView.swift           # 4-page walkthrough carousel
 │   ├── 📁 Splash/
 │   │   └── SplashView.swift               # Animated launch screen
 │   ├── 📁 Auth/
-│   │   └── LoginView.swift                # Yellow/Black themed login
+│   │   ├── LoginView.swift                # Yellow/Black themed login
+│   │   └── OTPVerificationView.swift      # 6-digit OTP with auto-advance
 │   ├── 📁 Dashboard/
 │   │   ├── DashboardView.swift            # Map-first home + state switching
 │   │   └── BookingFlowViews.swift         # Vehicle select, finding, active ride
 │   ├── 📁 Map/
 │   │   ├── RouteMapView.swift             # UIViewRepresentable MKMapView
 │   │   └── LocationSearchView.swift       # Pickup & destination search
+│   ├── 📁 Tracking/
+│   │   └── LiveTrackingView.swift         # Real-time driver tracking + SOS
 │   ├── 📁 Menu/
-│   │   └── SideMenuView.swift             # Slide-in navigation drawer
+│   │   └── SideMenuView.swift             # Slide-in navigation (20+ items)
+│   ├── 📁 Profile/
+│   │   └── ProfileView.swift              # Editable profile & preferences
 │   ├── 📁 History/
 │   │   ├── RideHistoryView.swift          # Past rides + filters + stats
 │   │   └── RideDetailView.swift           # Trip receipt & breakdown
+│   ├── 📁 Receipt/
+│   │   └── RideReceiptView.swift          # Detailed invoice + share/download
 │   ├── 📁 Rating/
 │   │   └── RatingView.swift               # Stars + tips + feedback
 │   ├── 📁 Wallet/
 │   │   └── WalletView.swift               # Balance + transactions
+│   ├── 📁 Payments/
+│   │   └── PaymentMethodsView.swift       # UPI, Cards, Corporate billing
 │   ├── 📁 Offers/
 │   │   └── OffersView.swift               # Gradient coupon cards
+│   ├── 📁 Schedule/
+│   │   └── ScheduleRideView.swift         # Advance booking + recurring rides
+│   ├── 📁 MultiStop/
+│   │   └── MultiStopRideView.swift        # Dynamic multi-stop management
+│   ├── 📁 Carpool/
+│   │   └── RideSharingView.swift          # Carpool matching + CO₂ tracking
+│   ├── 📁 FareEstimator/
+│   │   └── FareEstimatorView.swift        # Route-based fare calculator
+│   ├── 📁 SavedAddresses/
+│   │   └── SavedAddressesView.swift       # Address management + icon picker
+│   ├── 📁 FavoriteDrivers/
+│   │   └── FavoriteDriversView.swift      # Driver preferences + priority
+│   ├── 📁 Corporate/
+│   │   └── CorporateDashboardView.swift   # Budget tracking + team activity
+│   ├── 📁 Insights/
+│   │   └── CommuteInsightsView.swift      # Analytics + spending charts
+│   ├── 📁 Referral/
+│   │   └── ReferralView.swift             # Invite & earn program
+│   ├── 📁 Notifications/
+│   │   └── NotificationsView.swift        # Categorized notification inbox
+│   ├── 📁 Emergency/
+│   │   └── EmergencySOSView.swift         # Panic button + contacts
+│   ├── 📁 Support/
+│   │   └── HelpSupportView.swift          # FAQ + quick action support
+│   ├── 📁 About/
+│   │   └── AboutView.swift                # Company info + legal docs
 │   ├── 📁 Settings/
-│   │   └── SettingsView.swift             # Toggles + saved places
+│   │   └── SettingsView.swift             # Comprehensive settings hub
+│   ├── 📁 Theme/
+│   │   └── ThemeSettingsView.swift         # Dark mode + accent color picker
+│   ├── 📁 Language/
+│   │   └── LanguageSelectionView.swift     # 11 Indian languages
+│   ├── 📁 Accessibility/
+│   │   └── AccessibilitySettingsView.swift # Font size, contrast, presets
 │   └── 📁 Components/
 │       ├── ActionCard.swift               # Reusable vehicle card
 │       └── SocialLoginButton.swift        # Google/Apple login UI
@@ -258,7 +367,7 @@ SmartCommute/
 
 | Element | Style |
 |---|---|
-| **Primary** | `#FAC935` — Rapido Yellow |
+| **Primary** | `#FAD035` — SmartCommute Yellow |
 | **Accent** | `#000000` — Bold Black |
 | **Cards** | White, 16-30px rounded, soft shadow |
 | **Buttons** | Full-width, yellow bg, black text |
@@ -266,6 +375,7 @@ SmartCommute/
 | **Pins** | Custom rendered circles with SF Symbols |
 | **Material** | `.ultraThinMaterial` glassmorphism |
 | **Animations** | Spring transitions, pulsing radar, scale effects |
+| **Charts** | Custom `GeometryReader` bar charts & ring charts |
 
 ---
 
@@ -287,7 +397,7 @@ cd Smart-commute-ios
 1. Open `SmartCommute.xcodeproj` in Xcode
 2. Select iPhone 16 Pro simulator
 3. Press `Cmd + R`
-4. Login with **any email/password**
+4. Swipe through onboarding → Login with **any email/password**
 
 ### 3️⃣ Run Backend *(Optional)*
 
@@ -325,6 +435,7 @@ cd Backend && npm install && npm start
 
 ## 🗺️ Roadmap
 
+### ✅ Completed (Phase 1 — Core)
 - [x] Animated Splash Screen
 - [x] Authentication (Login/Logout)
 - [x] Map-First Dashboard with nearby drivers
@@ -342,11 +453,40 @@ cd Backend && npm install && npm start
 - [x] Wallet with Transactions
 - [x] Offers & Coupon Cards
 - [x] Settings & Saved Places
+
+### ✅ Completed (Phase 2 — 22 New Screens)
+- [x] Onboarding Walkthrough (4 pages)
+- [x] OTP Verification Screen
+- [x] Profile / Edit Profile
+- [x] Live Ride Tracking
+- [x] Multi-Stop Rides
+- [x] Scheduled Rides
+- [x] Ride Sharing / Carpool
+- [x] Detailed Ride Receipt
+- [x] Emergency SOS
+- [x] Payment Methods
+- [x] Fare Estimator
+- [x] Saved Addresses Management
+- [x] Favorite Drivers
+- [x] Corporate Dashboard
+- [x] Commute Insights & Analytics
+- [x] Referral Program
+- [x] Notifications Inbox
+- [x] Help & Support
+- [x] About / Legal
+- [x] Theme / Dark Mode Toggle
+- [x] Language Selection (11 languages)
+- [x] Accessibility Settings
+
+### 🚧 Future (Phase 3)
 - [ ] Real-time GPS Tracking (CoreLocation)
 - [ ] Firebase Authentication
 - [ ] Payment Gateway (Razorpay/Stripe)
-- [ ] Push Notifications
+- [ ] Push Notifications (APNs)
 - [ ] Driver-side Companion App
+- [ ] Real-time Chat (WebSocket)
+- [ ] Ride Cancellation Flow
+- [ ] Surge Pricing Engine
 
 ---
 

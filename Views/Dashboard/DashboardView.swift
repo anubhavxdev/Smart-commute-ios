@@ -226,7 +226,7 @@ struct DashboardView: View {
             
             Spacer()
             
-            Button(action: { navigateTo = .offers; showNavigation = true }) {
+            Button(action: { navigateTo = .notifications; showNavigation = true }) {
                 ZStack(alignment: .topTrailing) {
                     Image(systemName: "bell.fill")
                         .font(.title3).padding(12)
@@ -250,6 +250,24 @@ struct DashboardView: View {
         case .wallet: WalletView()
         case .offers: OffersView()
         case .settings: SettingsView().environmentObject(authViewModel)
+        case .profile: ProfileView().environmentObject(authViewModel)
+        case .notifications: NotificationsView()
+        case .helpSupport: HelpSupportView()
+        case .about: AboutView()
+        case .savedAddresses: SavedAddressesView()
+        case .scheduleRide: ScheduleRideView()
+        case .rideSharing: RideSharingView()
+        case .emergencySOS: EmergencySOSView()
+        case .paymentMethods: PaymentMethodsView()
+        case .fareEstimator: FareEstimatorView()
+        case .corporate: CorporateDashboardView()
+        case .insights: CommuteInsightsView()
+        case .referral: ReferralView()
+        case .favoriteDrivers: FavoriteDriversView()
+        case .multiStop: MultiStopRideView()
+        case .accessibility: AccessibilitySettingsView()
+        case .language: LanguageSelectionView()
+        case .theme: ThemeSettingsView()
         case .none: EmptyView()
         }
     }
