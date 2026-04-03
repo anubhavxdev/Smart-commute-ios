@@ -6,7 +6,7 @@ struct FareEstimatorView: View {
     @State private var estimatedDistance = 0.0
     @State private var showEstimate = false
     
-    let brandYellow = Color(red: 0.98, green: 0.79, blue: 0.21)
+    let brandYellow = Color.brand
     
     let quickDestinations = [
         ("Koramangala 5th Block", 3.2),

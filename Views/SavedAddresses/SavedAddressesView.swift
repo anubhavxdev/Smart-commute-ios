@@ -9,7 +9,7 @@ struct SavedAddress: Identifiable {
 }
 
 struct SavedAddressesView: View {
-    let brandYellow = Color(red: 0.98, green: 0.79, blue: 0.21)
+    let brandYellow = Color.brand
     
     @State private var addresses: [SavedAddress] = [
         SavedAddress(icon: "house.fill", label: "Home", address: "HSR Layout, Sector 2, 27th Main Road, Bangalore - 560102", color: .blue),

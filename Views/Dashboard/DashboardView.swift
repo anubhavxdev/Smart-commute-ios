@@ -1,4 +1,21 @@
 import SwiftUI
+
+// MARK: - SmartCommute Design Tokens
+extension Color {
+    static let brand = Color(red: 0.98, green: 0.79, blue: 0.21)
+    static let brandSurface = Color.brand.opacity(0.08)
+    static let brandSurfaceStrong = Color.brand.opacity(0.15)
+    static let success = Color.green
+    static let warning = Color.orange
+    static let danger = Color.red
+    static let surfacePrimary = Color.white
+    static let surfaceSecondary = Color(UIColor.systemGroupedBackground)
+    static let surfaceTertiary = Color.gray.opacity(0.06)
+}
+
+extension LinearGradient {
+    static let brandGradient = LinearGradient(colors: [Color.brand, Color.orange], startPoint: .leading, endPoint: .trailing)
+}
 import MapKit
 
 struct DashboardView: View {
@@ -10,7 +27,7 @@ struct DashboardView: View {
     @State private var showRating = false
     @State private var showNavigation = false
     
-    let brandYellow = Color(red: 0.98, green: 0.79, blue: 0.21)
+    let brandYellow = Color.brand
     
     var body: some View {
         NavigationStack {
@@ -346,7 +363,7 @@ struct FarePreviewChip: View {
     let icon: String
     let label: String
     let fare: Int
-    let brandYellow = Color(red: 0.98, green: 0.79, blue: 0.21)
+    let brandYellow = Color.brand
     
     var body: some View {
         VStack(spacing: 6) {
@@ -364,7 +381,7 @@ struct FarePreviewChip: View {
 // MARK: - Saved Place Pill
 struct SavedPlacePill: View {
     let icon: String; let name: String; let time: String
-    let brandYellow = Color(red: 0.98, green: 0.79, blue: 0.21)
+    let brandYellow = Color.brand
     
     var body: some View {
         HStack(spacing: 8) {

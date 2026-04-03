@@ -13,7 +13,7 @@ struct ProfileView: View {
     @State private var showImagePicker = false
     @State private var isSaved = false
     
-    let brandYellow = Color(red: 0.98, green: 0.79, blue: 0.21)
+    let brandYellow = Color.brand
     let genders = ["Male", "Female", "Non-binary", "Prefer not to say"]
     
     var body: some View {
@@ -192,7 +192,7 @@ struct StatPill: View {
     let icon: String
     let value: String
     let label: String
-    let brandYellow = Color(red: 0.98, green: 0.79, blue: 0.21)
+    let brandYellow = Color.brand
     
     var body: some View {
         VStack(spacing: 4) {

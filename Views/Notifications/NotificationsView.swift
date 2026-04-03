@@ -18,7 +18,7 @@ struct NotificationsView: View {
     @State private var selectedFilter = "All"
     let filters = ["All", "Rides", "Promos", "System"]
     
-    let brandYellow = Color(red: 0.98, green: 0.79, blue: 0.21)
+    let brandYellow = Color.brand
     
     @State private var notifications: [NotificationItem] = [
         NotificationItem(icon: "car.fill", title: "Ride Completed", message: "Your ride to Koramangala 5th Block has been completed. Fare: ₹45", time: "2 min ago", type: .ride, isRead: false),

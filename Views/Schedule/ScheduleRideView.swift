@@ -12,7 +12,7 @@ struct ScheduleRideView: View {
     @State private var isScheduled = false
     @State private var showConfirmation = false
     
-    let brandYellow = Color(red: 0.98, green: 0.79, blue: 0.21)
+    let brandYellow = Color.brand
     let vehicles = ["Bike", "Auto", "Cab"]
     let weekdays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
     

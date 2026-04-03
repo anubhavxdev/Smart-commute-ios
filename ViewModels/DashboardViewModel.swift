@@ -1,6 +1,73 @@
 import Foundation
 import SwiftUI
 import MapKit
+import UIKit
+
+// MARK: - Haptic Feedback Manager
+final class HapticManager {
+    static let shared = HapticManager()
+    private init() {}
+    
+    func selection() {
+        let generator = UISelectionFeedbackGenerator()
+        generator.prepare()
+        generator.selectionChanged()
+    }
+    
+    func impact(_ style: UIImpactFeedbackGenerator.FeedbackStyle = .medium) {
+        let generator = UIImpactFeedbackGenerator(style: style)
+        generator.prepare()
+        generator.impactOccurred()
+    }
+    
+    func success() {
+        let generator = UINotificationFeedbackGenerator()
+        generator.prepare()
+        generator.notificationOccurred(.success)
+    }
+    
+    func warning() {
+        let generator = UINotificationFeedbackGenerator()
+        generator.prepare()
+        generator.notificationOccurred(.warning)
+    }
+    
+    func error() {
+        let generator = UINotificationFeedbackGenerator()
+        generator.prepare()
+        generator.notificationOccurred(.error)
+    }
+    
+    func heavyImpact() {
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.prepare()
+        generator.impactOccurred(intensity: 1.0)
+    }
+}
+
+enum CancellationReason: String, CaseIterable, Identifiable {
+    case driverFar = "Driver is too far"
+    case changedPlans = "Changed my plans"
+    case foundAnother = "Found another ride"
+    case wrongPickup = "Wrong pickup location"
+    case priceTooHigh = "Price is too high"
+    case longWait = "Long wait time"
+    case other = "Other reason"
+    
+    var id: String { rawValue }
+    
+    var icon: String {
+        switch self {
+        case .driverFar: return "car.side.front.open"
+        case .changedPlans: return "arrow.uturn.left.circle"
+        case .foundAnother: return "hand.thumbsup"
+        case .wrongPickup: return "mappin.slash"
+        case .priceTooHigh: return "indianrupeesign.arrow.circlepath"
+        case .longWait: return "clock.badge.exclamationmark"
+        case .other: return "ellipsis.circle"
+        }
+    }
+}
 
 enum BookingState: Equatable {
     case idle
@@ -30,6 +97,14 @@ class DashboardViewModel: ObservableObject {
     @Published var selectedPickup: String = "Current Location"
     @Published var selectedVehicle: VehicleType?
     
+    // Surge Pricing
+    @Published var isSurgeActive = false
+    @Published var surgeMultiplier: Double = 1.0
+    
+    // Promo Code
+    @Published var appliedPromoCode: String?
+    @Published var promoDiscount: Int = 0
+    
     // Coordinates
     @Published var pickupCoordinate = CLLocationCoordinate2D(latitude: 12.9716, longitude: 77.5946)
     @Published var dropCoordinate = CLLocationCoordinate2D(latitude: 12.9784, longitude: 77.6408)
@@ -40,13 +115,19 @@ class DashboardViewModel: ObservableObject {
     @Published var driverLocation: CLLocationCoordinate2D?
     private var driverTimer: Timer?
     
-    // Dynamic fares based on distance
-    var bikeFare: Int { max(25, Int(routeDistance * 12)) }
-    var autoFare: Int { max(35, Int(routeDistance * 18)) }
-    var cabFare: Int { max(80, Int(routeDistance * 35)) }
+    // Dynamic fares based on distance and surge/promo
+    var bikeFare: Int { calculateFare(base: 12, minFare: 25) }
+    var autoFare: Int { calculateFare(base: 18, minFare: 35) }
+    var cabFare: Int { calculateFare(base: 35, minFare: 80) }
+    
+    private func calculateFare(base: Double, minFare: Int) -> Int {
+        let baseAmount = Double(max(minFare, Int(routeDistance * base)))
+        let surgedAmount = baseAmount * (isSurgeActive ? surgeMultiplier : 1.0)
+        return max(0, Int(surgedAmount) - promoDiscount)
+    }
     
     var fareEstimates: [VehicleType: Int] {
-        [.bike: bikeFare, .auto: autoFare, .cab: cabFare, .parcel: max(40, Int(routeDistance * 15))]
+        [.bike: bikeFare, .auto: autoFare, .cab: cabFare, .parcel: calculateFare(base: 15, minFare: 40)]
     }
     var fareETAs: [VehicleType: String] {
         [.bike: "\(max(2, Int(routeDistance * 2))) min", .auto: "\(max(3, Int(routeDistance * 2.5))) min", .cab: "\(max(5, Int(routeDistance * 3))) min", .parcel: "\(max(8, Int(routeDistance * 4))) min"]
@@ -66,6 +147,12 @@ class DashboardViewModel: ObservableObject {
     init() {
         generateNearbyDrivers()
         Task { await fetchRides() }
+        
+        // Randomly activate surge for demo
+        if Double.random(in: 0...1) > 0.7 {
+            isSurgeActive = true
+            surgeMultiplier = Double.random(in: 1.2...1.8)
+        }
     }
     
     func generateNearbyDrivers() {
@@ -127,6 +214,18 @@ class DashboardViewModel: ObservableObject {
         }
     }
     
+    func applyPromo(code: String, discount: Int) {
+        self.appliedPromoCode = code
+        self.promoDiscount = discount
+        HapticManager.shared.success()
+    }
+    
+    func removePromo() {
+        self.appliedPromoCode = nil
+        self.promoDiscount = 0
+        HapticManager.shared.selection()
+    }
+    
     func bookRide(vehicle: VehicleType) {
         self.selectedVehicle = vehicle
         withAnimation(.spring(response: 0.4, dampingFraction: 0.85)) {
@@ -178,7 +277,12 @@ class DashboardViewModel: ObservableObject {
         }
     }
     
-    func cancelBooking() {
+    func cancelBooking(reason: CancellationReason? = nil) {
+        // Log reason if provided for analytics
+        if let reason = reason {
+            print("Ride cancelled with reason: \(reason.rawValue)")
+        }
+        
         driverTimer?.invalidate()
         driverTimer = nil
         withAnimation(.spring(response: 0.4, dampingFraction: 0.85)) {
@@ -191,10 +295,13 @@ class DashboardViewModel: ObservableObject {
             self.driverLocation = nil
             self.routeDistance = 0
             self.routeETA = 0
+            self.appliedPromoCode = nil
+            self.promoDiscount = 0
         }
         generateNearbyDrivers()
     }
 }
+
 
 struct PopularPlace: Identifiable {
     let id = UUID()

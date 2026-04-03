@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct CorporateDashboardView: View {
-    let brandYellow = Color(red: 0.98, green: 0.79, blue: 0.21)
+    let brandYellow = Color.brand
     
     @State private var selectedMonth = "Mar 2026"
     let months = ["Jan 2026", "Feb 2026", "Mar 2026"]
@@ -250,7 +250,7 @@ struct TeamMateRow: View {
     let name: String
     let rides: Int
     let amount: Int
-    let brandYellow = Color(red: 0.98, green: 0.79, blue: 0.21)
+    let brandYellow = Color.brand
     
     var body: some View {
         HStack(spacing: 12) {

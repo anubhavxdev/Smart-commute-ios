@@ -12,7 +12,7 @@ struct OTPVerificationView: View {
     @State private var showError = false
     @State private var timer: Timer?
     
-    let brandYellow = Color(red: 0.98, green: 0.79, blue: 0.21)
+    let brandYellow = Color.brand
     
     var body: some View {
         ZStack {
@@ -184,7 +184,7 @@ struct OTPVerificationView: View {
 struct OTPDigitField: View {
     @Binding var digit: String
     let isFocused: Bool
-    let brandYellow = Color(red: 0.98, green: 0.79, blue: 0.21)
+    let brandYellow = Color.brand
     
     var body: some View {
         TextField("", text: $digit)

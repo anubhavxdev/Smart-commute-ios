@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct OffersView: View {
-    let brandYellow = Color(red: 0.98, green: 0.79, blue: 0.21)
+    let brandYellow = Color.brand
     
     let offers: [MockOffer] = [
         MockOffer(title: "50% OFF", subtitle: "On your first Bike ride", code: "FIRST50", gradient: [Color.purple, Color.pink]),

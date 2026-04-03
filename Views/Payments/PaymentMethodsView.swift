@@ -14,7 +14,7 @@ struct PaymentMethod: Identifiable {
 }
 
 struct PaymentMethodsView: View {
-    let brandYellow = Color(red: 0.98, green: 0.79, blue: 0.21)
+    let brandYellow = Color.brand
     
     @State private var methods: [PaymentMethod] = [
         PaymentMethod(type: .upi, name: "Google Pay", detail: "user@okicici", icon: "indianrupeesign.circle.fill", isDefault: true),

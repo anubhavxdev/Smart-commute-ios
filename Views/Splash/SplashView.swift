@@ -5,7 +5,7 @@ struct SplashView: View {
     @State private var scale: CGFloat = 0.6
     @State private var opacity: Double = 0.0
     
-    let brandYellow = Color(red: 0.98, green: 0.79, blue: 0.21)
+    let brandYellow = Color.brand
     
     var body: some View {
         if isActive {

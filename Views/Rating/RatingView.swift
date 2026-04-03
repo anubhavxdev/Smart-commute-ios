@@ -9,7 +9,7 @@ struct RatingView: View {
     @State private var feedback: String = ""
     @State private var selectedTip: Int? = nil
     
-    let brandYellow = Color(red: 0.98, green: 0.79, blue: 0.21)
+    let brandYellow = Color.brand
     let tips = [10, 20, 50]
     
     var body: some View {

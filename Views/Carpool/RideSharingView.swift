@@ -15,7 +15,7 @@ struct CarpoolMatch: Identifiable {
 
 struct RideSharingView: View {
     @State private var selectedTab = "Find"
-    let brandYellow = Color(red: 0.98, green: 0.79, blue: 0.21)
+    let brandYellow = Color.brand
     
     let matches: [CarpoolMatch] = [
         CarpoolMatch(name: "Priya Sharma", department: "Engineering", route: "HSR → Koramangala", time: "9:00 AM", rating: 4.9, rides: 23, savings: 35, matchPercent: 95, avatar: "person.crop.circle.fill"),

@@ -5,7 +5,7 @@ struct ActionCard: View {
     let iconName: String
     let action: () -> Void
     
-    let brandYellow = Color(red: 0.98, green: 0.79, blue: 0.21)
+    let brandYellow = Color.brand
     
     var body: some View {
         Button(action: action) {

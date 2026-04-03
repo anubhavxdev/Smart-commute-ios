@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct AccessibilitySettingsView: View {
-    let brandYellow = Color(red: 0.98, green: 0.79, blue: 0.21)
+    let brandYellow = Color.brand
     
     @State private var largeText = false
     @State private var highContrast = false

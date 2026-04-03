@@ -7,7 +7,7 @@ enum AppTheme: String, CaseIterable {
 }
 
 struct ThemeSettingsView: View {
-    let brandYellow = Color(red: 0.98, green: 0.79, blue: 0.21)
+    let brandYellow = Color.brand
     
     @State private var selectedTheme: AppTheme = .system
     @State private var useAutoSwitch = true
@@ -16,7 +16,7 @@ struct ThemeSettingsView: View {
     @State private var accentColor = "Yellow"
     
     let accentColors: [(String, Color)] = [
-        ("Yellow", Color(red: 0.98, green: 0.79, blue: 0.21)),
+        ("Yellow", Color.brand),
         ("Blue", .blue),
         ("Green", .green),
         ("Purple", .purple),

@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct CommuteInsightsView: View {
-    let brandYellow = Color(red: 0.98, green: 0.79, blue: 0.21)
+    let brandYellow = Color.brand
     @State private var selectedPeriod = "This Month"
     let periods = ["This Week", "This Month", "All Time"]
     
@@ -229,7 +229,7 @@ struct TopRouteRow: View {
     let to: String
     let count: Int
     let avgFare: Int
-    let brandYellow = Color(red: 0.98, green: 0.79, blue: 0.21)
+    let brandYellow = Color.brand
     
     var body: some View {
         HStack(spacing: 10) {

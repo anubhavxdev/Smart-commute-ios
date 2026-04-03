@@ -2,7 +2,7 @@ import SwiftUI
 
 struct MultiStopRideView: View {
     @Environment(\.dismiss) var dismiss
-    let brandYellow = Color(red: 0.98, green: 0.79, blue: 0.21)
+    let brandYellow = Color.brand
     
     @State private var stops: [RideStop] = [
         RideStop(name: "HSR Layout, Sector 2", type: .pickup),
