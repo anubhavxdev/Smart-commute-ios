@@ -89,6 +89,9 @@ SmartCommute is a beautiful, full-featured ride-hailing app designed and built e
 - Animated progress visualization
 - ETA countdown
 - One-tap SOS, Call, Chat, Share
+- **In-App Chat:** Real-time messaging with quick-reply chips and typing animations
+- **Haptic Feedback:** Tactile interaction patterns for success, error, and impact
+- **Skeleton Loading:** Shimmer modifiers for smooth state transitions
 
 ### 📍 Multi-Stop Rides
 - Add up to 3 intermediate stops
@@ -107,6 +110,9 @@ SmartCommute is a beautiful, full-featured ride-hailing app designed and built e
 - Transaction history
 - Smart defaults & quick access
 - Corporate billing support
+- **Promo Codes:** Integrated coupon application with dynamic fare reduction
+- **Surge Pricing:** Real-time demand-based multipliers with visual transparency
+- **Formal Cancellation:** Multi-reason cancellation workflow with fee transparency
 
 ### 🛠️ Commute Tools
 - Fare estimator
@@ -351,15 +357,22 @@ SmartCommute/
 - Help & support
 - Profile & preferences
 
-### 🚧 Phase 3 — Coming Soon
+### ✅ Phase 3 — Production Polish (Complete)
+- **Ride cancellation flow** with reason selection
+- **Surge pricing engine** with UI overlays
+- **In-app chat** with quick replies
+- **Promo code integration**
+- **Haptic feedback system** (Semantic patterns)
+- **Centralized Design System** (Design Tokens)
+- **Skeleton loading states** (Shimmer effects)
+
+### 🚧 Phase 4 — Coming Soon
 - Real-time GPS tracking (CoreLocation)
 - Firebase authentication
 - Payment gateway integration
 - Push notifications (APNs)
 - Driver companion app
-- Real-time chat (WebSocket)
-- Ride cancellation flow
-- Surge pricing engine
+- Real-time chat (WebSocket integration)
 
 ---
 
